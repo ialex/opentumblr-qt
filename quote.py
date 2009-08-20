@@ -16,4 +16,24 @@ class Quote(Quote_widget):
         self.close()
     
     def OnPost(self):
-        pass
+        self.quote = self.tc_quote.GetValue().encode('utf-8')
+    	self.source = self.tc_source.GetValue().encode('utf-8')
+        self.tags = self.tc_tag.GetValue().encode('utf-8')
+        self.tags = string.replace(self.tags,' ', ',')
+        self.date = self.tc_date.GetValue().encode('utf-8')
+
+        if self.cb_publishing.GetValue() == 'private':
+        	self.private = 1
+        else:
+        	self.private = 0
+        
+        if self.quote:
+            #self.format = None
+            self.api = Api(self.api.name, self.api.email, self.api.password, self.private, self.date, self.tags)
+            try:
+                self.post = self.api.write_quote(self.quote, self.source)
+            except:
+                print "posteado en el blog primario"
+            self.Close()
+        else:
+            Message('Quote is required')
