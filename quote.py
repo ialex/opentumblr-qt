@@ -11,22 +11,22 @@ class Quote(Quote_widget):
         #Conectar eventos
         self.connect(self.bt_cancel, QtCore.SIGNAL("clicked()"), self.OnCancel)
         self.connect(self.bt_post, QtCore.SIGNAL("clicked()"), self.OnPost)
-        
+
     def OnCancel(self):
         self.close()
-    
-    def OnPost(self):
-        self.quote = self.tc_quote.GetValue().encode('utf-8')
-    	self.source = self.tc_source.GetValue().encode('utf-8')
-        self.tags = self.tc_tag.GetValue().encode('utf-8')
-        self.tags = string.replace(self.tags,' ', ',')
-        self.date = self.tc_date.GetValue().encode('utf-8')
 
-        if self.cb_publishing.GetValue() == 'private':
-        	self.private = 1
+    def OnPost(self):
+        self.quote = unicode(self.te_quote.toPlainText())
+        self.source = unicode(self.te_source.toPlainText())
+        self.tags = unicode(self.advanced.te_tags.toPlainText)
+        self.tags = string.replace(self.tags,' ', ',')
+        self.date = self.advanced.le_date.text()
+
+        if self.advanced.cb_publish.currentText() == 'private':
+            self.private = 1
         else:
-        	self.private = 0
-        
+            self.private = 0
+
         if self.quote:
             #self.format = None
             self.api = Api(self.api.name, self.api.email, self.api.password, self.private, self.date, self.tags)
@@ -36,4 +36,4 @@ class Quote(Quote_widget):
                 print "posteado en el blog primario"
             self.Close()
         else:
-            Message('Quote is required')
+            QtGui.QMessageBox.warning(self,"Error","Quote is required",QtGui.QMessageBox.Ok)
