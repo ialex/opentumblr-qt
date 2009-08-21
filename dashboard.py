@@ -3,6 +3,7 @@ from PyQt4 import QtCore, QtGui
 from text import Text
 from photo import Photo
 from quote import Quote
+from link import Link
 
 class Dashboard(Dashboard_widget):
     def __init__(self,parent=None):
@@ -33,8 +34,8 @@ class Dashboard(Dashboard_widget):
         quote.show()
     
     def OnUrl(self):
-        print "url"
-        pass
+        link = Link(self)
+        link.show()
     
     def OnChat(self):
         print "chat"

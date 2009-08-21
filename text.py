@@ -16,7 +16,11 @@ class Text(Text_widget):
         self.close()
     
     def OnPost(self):
-        self.title = self.le_title.text()
+        if self.le_title.text().isEmpty:
+            self.le_title = ''
+        else:            
+            self.title = unicode(self.le_title.text()).encode("utf-8")
+        
         self.body = unicode(self.te_post.toPlainText())
         self.tags = unicode(self.advanced.te_tags.toPlainText())
         self.tags = string.replace(self.tags,' ', ',')
@@ -36,7 +40,7 @@ class Text(Text_widget):
             try:
                 self.post = self.api.write_regular(self.title, self.body)
             except:
-                print "Posteado en blog primario"
+                print "Puta madre hubo un error"
                 #print "Posteado en " % self.post
                 #assert False,dir(self.post.values)
             self.close()

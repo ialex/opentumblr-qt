@@ -1,11 +1,11 @@
-from quote_ui import Quote_widget
+from link_ui import Link_widget
 from PyQt4 import QtCore, QtGui
 from tumblr import Api, TumblrError
 import string
 
-class Quote(Quote_widget):
+class Link(Link_widget):
     def __init__(self,parent=None):
-        super(Quote,self).__init__(parent)        
+        super(Link,self).__init__(parent)        
         self.setupUi()
         self.api = parent.api
         #Conectar eventos
@@ -16,11 +16,12 @@ class Quote(Quote_widget):
         self.close()
 
     def OnPost(self):
-        self.quote = unicode(self.te_quote.toPlainText()).encode("utf-8")
-        if self.te_source.document().isEmpty:
-            self.te_source = ''
-        else:            
-            self.source = unicode(self.te_source.toPlainText()).encode("utf-8")
+        if self.le_title.text().isEmpty():
+            self.title = ''
+        else:
+            self.title = unicode(self.le_title.text()).encode("utf-8")
+        self.urllink = self.le_URL.text()
+        self.description = unicode(self.te_description.toPlainText()).encode('utf-8')
         if self.advanced.te_tags.document().isEmpty:
             self.tags = ""
         else:
@@ -33,13 +34,13 @@ class Quote(Quote_widget):
         else:
             self.private = 0
 
-        if self.quote:
+        if self.urllink:
             #self.format = None
             self.api = Api(self.api.name, self.api.email, self.api.password, self.private, self.date, self.tags)
             try:
-                self.post = self.api.write_quote(self.quote, self.source)
+                self.post = self.api.write_link(self.title,self.urllink,self.description)
             except:
-                print "Puta madre hubo un error"
+                print "Puta Madre ocurrio un error wey"
             self.close()
         else:
-            QtGui.QMessageBox.warning(self,"Error","Quote is required",QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.warning(self,"Error","URL is required",QtGui.QMessageBox.Ok)
