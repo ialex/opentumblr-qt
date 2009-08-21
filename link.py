@@ -22,10 +22,10 @@ class Link(Link_widget):
             self.title = unicode(self.le_title.text()).encode("utf-8")
         self.urllink = self.le_URL.text()
         self.description = unicode(self.te_description.toPlainText()).encode('utf-8')
-        if self.advanced.te_tags.document().isEmpty:
+        if self.advanced.te_tags.toPlainText().isEmpty():
             self.tags = ""
         else:
-            self.tags = unicode(self.advanced.te_tags.toPlainText).encode("utf-8")
+            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode("utf-8")
         self.tags = string.replace(self.tags,' ', ',')
         self.date = self.advanced.le_date.text()
 

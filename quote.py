@@ -21,10 +21,10 @@ class Quote(Quote_widget):
             self.te_source = ''
         else:            
             self.source = unicode(self.te_source.toPlainText()).encode("utf-8")
-        if self.advanced.te_tags.document().isEmpty:
+        if self.advanced.te_tags.document().isEmpty():
             self.tags = ""
         else:
-            self.tags = unicode(self.advanced.te_tags.toPlainText).encode("utf-8")
+            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode("utf-8")
         self.tags = string.replace(self.tags,' ', ',')
         self.date = self.advanced.le_date.text()
 

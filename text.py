@@ -16,13 +16,16 @@ class Text(Text_widget):
         self.close()
     
     def OnPost(self):
-        if self.le_title.text().isEmpty:
+        if self.le_title.text().isEmpty():
             self.le_title = ''
         else:            
             self.title = unicode(self.le_title.text()).encode("utf-8")
         
         self.body = unicode(self.te_post.toPlainText())
-        self.tags = unicode(self.advanced.te_tags.toPlainText())
+        if self.advanced.te_tags.toPlainText().isEmpty():
+            self.tags = ""
+        else:
+            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode("utf-8")
         self.tags = string.replace(self.tags,' ', ',')
         self.date = self.advanced.le_date.text()
 
