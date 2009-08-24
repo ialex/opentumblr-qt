@@ -32,6 +32,9 @@ class Quote_widget(QtGui.QDialog):
         
         #textedit
         self.te_quote = QtGui.QTextEdit()
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.te_quote.setFont(font)
         self.te_source = QtGui.QTextEdit()
         
         #button box
