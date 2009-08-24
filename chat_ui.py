@@ -31,17 +31,17 @@ class Chat_widget(QtGui.QDialog):
         return linedit
     
     def setupUi(self):
-        self.setWindowTitle("Opemtumblr Chat")
+        self.setWindowTitle('Opemtumblr Chat')
         self.resize(655,386)
         
         Hbox = QtGui.QHBoxLayout()
         self.Vbox = QtGui.QVBoxLayout()
         
         #labels
-        self.lb_Add = self.CreateLabel("<h1>Add a Chat Post</h1>")
-        self.lb_title = self.CreateLabel("<big>Add a Chat Post</big> (optional)")
-        self.lb_dialog = self.CreateLabel("<big>Dialogue</big>")
-        self.lb_intructions = self.CreateLabel("<strong>Example</strong> \n Tourist: Could you give us directions to Olive Garden?\n New Yorker: No, but I could give you directions to an actual Italian restaurant.")
+        self.lb_Add = self.CreateLabel('<h1>Add a Chat Post</h1>')
+        self.lb_title = self.CreateLabel('<big>Title</big> (optional)')
+        self.lb_dialog = self.CreateLabel('<big>Dialogue</big>')
+        self.lb_intructions = self.CreateLabel("<strong>Example</strong><br />Tourist: Could you give us directions to Olive Garden?<br />New Yorker: No, but I could give you directions to an actual Italian restaurant.")
         
         self.le_title = self.CreateLineEdit()
         self.te_chat = QtGui.QTextEdit()
@@ -49,10 +49,10 @@ class Chat_widget(QtGui.QDialog):
         #button box
         self.BtBox = QtGui.QHBoxLayout()
         #Botones post y cancel
-        self.bt_post = self.CreateButton("Create Post")
-        self.bt_post.setStyleSheet("color: green")
-        self.bt_cancel = self.CreateButton("Cancel")
-        self.bt_cancel.setStyleSheet("color: red")
+        self.bt_post = self.CreateButton('Create Post')
+        self.bt_post.setStyleSheet('color: green')
+        self.bt_cancel = self.CreateButton('Cancel')
+        self.bt_cancel.setStyleSheet('color: red')
         #Agregamos al Btbox
         self.BtBox.addWidget(self.bt_post)
         self.BtBox.addStretch()
