@@ -11,11 +11,11 @@ class Cliente_Opentumblr(Main_widget):
                 super(Main_widget, self).__init__(parent)
                 self.setupUi()                             
                 #Conectar eventos
-                QtCore.QObject.connect(self.bt_login, QtCore.SIGNAL("clicked()"), self.OnAuthTumblr)            
+                QtCore.QObject.connect(self.bt_login, QtCore.SIGNAL('clicked()'), self.OnAuthTumblr)            
                 
                 #Debug properties                                                                      
-                self.le_mail.setText("admin@ialex.org")                                                
-                self.le_url.setText("http://ialex.tumblr.com")
+                self.le_mail.setText('admin@ialex.org')                                                
+                self.le_url.setText('http://ialex.tumblr.com')
                 
         def OnAuthTumblr(self):
                 self.User = self.le_mail.text()                
@@ -31,7 +31,7 @@ class Cliente_Opentumblr(Main_widget):
                                 dashboard = Dashboard(self)                                                                  
                                 self.hide()
                                 dashboard.show()                                
-                                #print "Te haz logueado"
+                                #print 'Te haz logueado'
                         except TumblrAuthError:	    		
                                 self.error = errors['403']
                         except urllib2.HTTPError:
@@ -40,14 +40,14 @@ class Cliente_Opentumblr(Main_widget):
                                 self.error = errors['urlopen']
                         finally:
                                 if self.error != None:
-                                        QtGui.QMessageBox.warning(self,"Error","Occurrio un error: \n" + self.error,QtGui.QMessageBox.Ok)			    
+                                        QtGui.QMessageBox.warning(self,'Error','Occurrio un error: \n' + self.error,QtGui.QMessageBox.Ok)			    
                 else:
-                        QtGui.QMessageBox.warning(self,"Error","Todos los Campos son necesarios",QtGui.QMessageBox.Ok)
+                        QtGui.QMessageBox.warning(self,'Error','Todos los Campos son necesarios',QtGui.QMessageBox.Ok)
                 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
         app = QtGui.QApplication(sys.argv)
         tumblr_client = Cliente_Opentumblr()        
         tumblr_client.show()     
-        app.connect(app, QtCore.SIGNAL("lastWindowClosed()"), app, QtCore.SLOT("quit()"))
+        app.connect(app, QtCore.SIGNAL('lastWindowClosed()'), app, QtCore.SLOT('quit()'))
         sys.exit(app.exec_())

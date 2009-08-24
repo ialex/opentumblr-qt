@@ -9,8 +9,8 @@ class Text(Text_widget):
         self.setupUi()
         self.api = parent.api
         #Conectar eventos
-        QtCore.QObject.connect(self.bt_cancel, QtCore.SIGNAL("clicked()"), self.OnCancel)
-        QtCore.QObject.connect(self.bt_post, QtCore.SIGNAL("clicked()"), self.OnPost)
+        QtCore.QObject.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
+        QtCore.QObject.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
         
     def OnCancel(self):
         self.close()
@@ -19,13 +19,13 @@ class Text(Text_widget):
         if self.le_title.text().isEmpty():
             self.le_title = ''
         else:            
-            self.title = unicode(self.le_title.text()).encode("utf-8")
+            self.title = unicode(self.le_title.text()).encode('utf-8')
         
         self.body = unicode(self.te_post.toPlainText())
         if self.advanced.te_tags.toPlainText().isEmpty():
-            self.tags = ""
+            self.tags = ''
         else:
-            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode("utf-8")
+            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode('utf-8')
         self.tags = string.replace(self.tags,' ', ',')
         self.date = self.advanced.le_date.text()
 
@@ -43,11 +43,11 @@ class Text(Text_widget):
             try:
                 self.post = self.api.write_regular(self.title, self.body)
             except:
-                print "Puta madre hubo un error"
-                #print "Posteado en " % self.post
+                print 'Puta madre hubo un error'
+                #print 'Posteado en ' % self.post
                 #assert False,dir(self.post.values)
             self.close()
         else:
-            QtGui.QMessageBox.warning(self,"Error","Text Post is required",QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.warning(self,'Error','Text Post is required',QtGui.QMessageBox.Ok)
     
     

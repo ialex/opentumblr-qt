@@ -31,7 +31,7 @@ class Text_widget(QtGui.QDialog):
                 return button   
  
         def setupUi(self):
-                self.setWindowTitle("Opentumblr  Text")
+                self.setWindowTitle('Opentumblr  Text')
                 self.resize(655,576)
                 
                 #Top layout
@@ -41,9 +41,9 @@ class Text_widget(QtGui.QDialog):
                 #HboxButtons = QtGui.QHBoxLayout()    
                 
                 #Line_edit and Buttons
-                self.lb_Add = self.CreateLabel("<h1>Add a Text Post</h1>")
-                self.lb_title = self.CreateLabel("<strong><big>Text</big></strong>(optional)")
-                self.lb_post = self.CreateLabel("<strong><h2>Post</h2></strong>")        
+                self.lb_Add = self.CreateLabel('<h1>Add a Text Post</h1>')
+                self.lb_title = self.CreateLabel('<strong><big>Text</big></strong>(optional)')
+                self.lb_post = self.CreateLabel('<strong><h2>Post</h2></strong>')        
                 self.le_title = self.CreateLineEdit()                
                 self.te_post = QtGui.QTextEdit()
                 self.te_post.setAcceptRichText(True)
@@ -51,10 +51,10 @@ class Text_widget(QtGui.QDialog):
                 #button box
                 self.BtBox = QtGui.QHBoxLayout()    
                 #Botones post y cancel
-                self.bt_post = self.CreateButton("Create Post")
-                self.bt_post.setStyleSheet("color: green")
-                self.bt_cancel = self.CreateButton("Cancel")
-                self.bt_cancel.setStyleSheet("color: red")
+                self.bt_post = self.CreateButton('Create Post')
+                self.bt_post.setStyleSheet('color: green')
+                self.bt_cancel = self.CreateButton('Cancel')
+                self.bt_cancel.setStyleSheet('color: red')
                 #Agregamos al Btbox
                 self.BtBox.addWidget(self.bt_post)
                 self.BtBox.addStretch()

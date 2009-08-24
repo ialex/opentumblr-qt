@@ -13,14 +13,14 @@ class Dashboard(Dashboard_widget):
         self.api = parent.api
         
         #conectar eventos        
-        QtCore.QObject.connect(self.bt_text, QtCore.SIGNAL("clicked()"), self.OnText)
-        QtCore.QObject.connect(self.bt_photo, QtCore.SIGNAL("clicked()"), self.OnPhoto)
-        QtCore.QObject.connect(self.bt_quote, QtCore.SIGNAL("clicked()"), self.OnQuote)
-        QtCore.QObject.connect(self.bt_url, QtCore.SIGNAL("clicked()"), self.OnUrl)
-        QtCore.QObject.connect(self.bt_chat, QtCore.SIGNAL("clicked()"), self.OnChat)
-        QtCore.QObject.connect(self.bt_audio, QtCore.SIGNAL("clicked()"), self.OnAudio)
-        QtCore.QObject.connect(self.bt_video, QtCore.SIGNAL("clicked()"), self.OnVideo)
-        QtCore.QObject.connect(self.bt_logout, QtCore.SIGNAL("clicked()"), self.OnLogout)
+        QtCore.QObject.connect(self.bt_text, QtCore.SIGNAL('clicked()'), self.OnText)
+        QtCore.QObject.connect(self.bt_photo, QtCore.SIGNAL('clicked()'), self.OnPhoto)
+        QtCore.QObject.connect(self.bt_quote, QtCore.SIGNAL('clicked()'), self.OnQuote)
+        QtCore.QObject.connect(self.bt_url, QtCore.SIGNAL('clicked()'), self.OnUrl)
+        QtCore.QObject.connect(self.bt_chat, QtCore.SIGNAL('clicked()'), self.OnChat)
+        QtCore.QObject.connect(self.bt_audio, QtCore.SIGNAL('clicked()'), self.OnAudio)
+        QtCore.QObject.connect(self.bt_video, QtCore.SIGNAL('clicked()'), self.OnVideo)
+        QtCore.QObject.connect(self.bt_logout, QtCore.SIGNAL('clicked()'), self.OnLogout)
         
     def OnText(self):
         text = Text(self)
@@ -43,11 +43,11 @@ class Dashboard(Dashboard_widget):
         chat.show()
     
     def OnAudio(self):
-        print "audio"
+        print 'audio'
         pass
     
     def OnVideo(self):
-        print "video"
+        print 'video'
         pass
     
     def OnLogout(self):

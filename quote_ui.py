@@ -19,16 +19,16 @@ class Quote_widget(QtGui.QDialog):
         return button     
     
     def setupUi(self):
-        self.setWindowTitle("Opemtumblr Quote")
+        self.setWindowTitle('Opemtumblr Quote')
         self.resize(655,386)
         
         Hbox = QtGui.QHBoxLayout()
         self.Vbox = QtGui.QVBoxLayout()
         
         #Labels
-        self.lb_Add = self.CreateLabel("<h1>Add a Quote</h1>")
-        self.lb_quote = self.CreateLabel("<big>Quote</big>")
-        self.lb_source = self.CreateLabel("<big>Source</big> (optional)")
+        self.lb_Add = self.CreateLabel('<h1>Add a Quote</h1>')
+        self.lb_quote = self.CreateLabel('<big>Quote</big>')
+        self.lb_source = self.CreateLabel('<big>Source</big> (optional)')
         
         #textedit
         self.te_quote = QtGui.QTextEdit()
@@ -40,10 +40,10 @@ class Quote_widget(QtGui.QDialog):
         #button box
         self.BtBox = QtGui.QHBoxLayout()
         #Botones post y cancel
-        self.bt_post = self.CreateButton("Create Post")
-        self.bt_post.setStyleSheet("color: green")
-        self.bt_cancel = self.CreateButton("Cancel")
-        self.bt_cancel.setStyleSheet("color: red")
+        self.bt_post = self.CreateButton('Create Post')
+        self.bt_post.setStyleSheet('color: green')
+        self.bt_cancel = self.CreateButton('Cancel')
+        self.bt_cancel.setStyleSheet('color: red')
         #Agregamos al Btbox
         self.BtBox.addWidget(self.bt_post)
         self.BtBox.addStretch()

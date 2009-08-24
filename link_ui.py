@@ -31,17 +31,17 @@ class Link_widget(QtGui.QDialog):
         return linedit
     
     def setupUi(self):
-        self.setWindowTitle("Opemtumblr Link")
+        self.setWindowTitle('Opemtumblr Link')
         self.resize(655,386)
         
         Hbox = QtGui.QHBoxLayout()
         self.Vbox = QtGui.QVBoxLayout()
         
         #labels
-        self.lb_Add = self.CreateLabel("<h1>Add a Link</h1>")
-        self.lb_title = self.CreateLabel("<big>Title</big> (optional)")
-        self.lb_url = self.CreateLabel("<big>URL</big>")
-        self.lb_description = self.CreateLabel("<big>Description</big> (optional)")
+        self.lb_Add = self.CreateLabel('<h1>Add a Link</h1>')
+        self.lb_title = self.CreateLabel('<big>Title</big> (optional)')
+        self.lb_url = self.CreateLabel('<big>URL</big>')
+        self.lb_description = self.CreateLabel('<big>Description</big> (optional)')
         
         #line edits
         self.le_title = self.CreateLineEdit()
@@ -51,10 +51,10 @@ class Link_widget(QtGui.QDialog):
         #button box
         self.BtBox = QtGui.QHBoxLayout()
         #Botones post y cancel
-        self.bt_post = self.CreateButton("Create Post")
-        self.bt_post.setStyleSheet("color: green")
-        self.bt_cancel = self.CreateButton("Cancel")
-        self.bt_cancel.setStyleSheet("color: red")
+        self.bt_post = self.CreateButton('Create Post')
+        self.bt_post.setStyleSheet('color: green')
+        self.bt_cancel = self.CreateButton('Cancel')
+        self.bt_cancel.setStyleSheet('color: red')
         #Agregamos al Btbox
         self.BtBox.addWidget(self.bt_post)
         self.BtBox.addStretch()

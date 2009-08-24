@@ -9,22 +9,22 @@ class Quote(Quote_widget):
         self.setupUi()
         self.api = parent.api
         #Conectar eventos
-        self.connect(self.bt_cancel, QtCore.SIGNAL("clicked()"), self.OnCancel)
-        self.connect(self.bt_post, QtCore.SIGNAL("clicked()"), self.OnPost)
+        self.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
+        self.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
 
     def OnCancel(self):
         self.close()
 
     def OnPost(self):
-        self.quote = unicode(self.te_quote.toPlainText()).encode("utf-8")
+        self.quote = unicode(self.te_quote.toPlainText()).encode('utf-8')
         if self.te_source.document().isEmpty:
             self.te_source = ''
         else:            
-            self.source = unicode(self.te_source.toPlainText()).encode("utf-8")
+            self.source = unicode(self.te_source.toPlainText()).encode('utf-8')
         if self.advanced.te_tags.document().isEmpty():
-            self.tags = ""
+            self.tags = ''
         else:
-            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode("utf-8")
+            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode('utf-8')
         self.tags = string.replace(self.tags,' ', ',')
         self.date = self.advanced.le_date.text()
 
@@ -39,7 +39,7 @@ class Quote(Quote_widget):
             try:
                 self.post = self.api.write_quote(self.quote, self.source)
             except:
-                print "Puta madre hubo un error"
+                print 'Puta madre hubo un error'
             self.close()
         else:
-            QtGui.QMessageBox.warning(self,"Error","Quote is required",QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.warning(self,'Error','Quote is required',QtGui.QMessageBox.Ok)
