@@ -8,7 +8,7 @@ class Chat(Chat_widget):
         super(Chat,self).__init__(parent)        
         self.setupUi()
         self.api = parent.api
-        #Conectar eventos
+        #Conectar eventos 
         self.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
         self.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
     
