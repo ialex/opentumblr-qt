@@ -18,21 +18,31 @@ class Photo(Photo_widget):
         self.close()
     
     def OnPost(self):
-        self.source = unicode(self.le_file.text()).encode('latin-1')
+        #Source == An URL - Data == A Path to the file on your Computer
+        self.source = unicode(self.le_imageurl.text()).encode('utf-8')
         
         print self.source
         if not self.source:
             self.source = None    
 
-        self.data = unicode(self.le_imageurl.text())        
+        self.data = unicode(self.le_file.text()).encode('utf-8')        
         if not self.data:
             self.data = None
-
-        self.caption = unicode(self.te_caption.toPlainText())
-        self.click  = unicode(self.le_link.text())
-        self.tags = unicode(self.advanced.te_tags.toPlainText())        
+        
+        if self.te_caption.toPlainText().isEmpty():
+            self.caption = ''
+        else:
+            self.caption = unicode(self.te_caption.toPlainText()).encode('utf-8')
+        if self.le_link.text().isEmpty():
+            self.click = ''
+        else:
+            self.click  = unicode(self.le_link.text()).encode('utf-8')
+        if self.advanced.te_tags.document().isEmpty():
+            self.tags = ''
+        else:
+            self.tags = unicode(self.advanced.te_tags.toPlainText()).encode('utf-8')
         self.tags = string.replace(self.tags,' ', ',')
-        self.date = unicode(self.advanced.le_date.text())
+        self.date = self.advanced.le_date.text()
 
         if self.advanced.cb_publish.currentText() == 'private':
             self.private = 1
@@ -42,10 +52,10 @@ class Photo(Photo_widget):
         if self.source or self.data:
             #self.format = None
             self.api = Api(self.api.name, self.api.email, self.api.password, self.private, self.date, self.tags)
-            #try:
-            self.post = self.api.write_photo(self.source, self.data, self.caption, self.click)
-            #except:
-                #print "Puta madre hubo un error"
+            try:
+                self.post = self.api.write_photo(self.source, self.data, self.caption, self.click)
+            except:            
+                print "Puta madre hubo un error"
             self.close()
         else:
             QtGui.QMessageBox.warning(self,"Error","Photo is required",QtGui.QMessageBox.Ok)
