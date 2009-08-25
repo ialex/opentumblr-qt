@@ -43,7 +43,7 @@ class Text(Text_widget):
             try:
                 self.post = self.api.write_regular(self.title, self.body)
             except:
-                print 'Puta madre hubo un error'
+                print 'posteado en blog principal'
                 #print 'Posteado en ' % self.post
                 #assert False,dir(self.post.values)
             self.close()

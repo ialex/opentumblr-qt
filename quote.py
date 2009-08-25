@@ -39,7 +39,7 @@ class Quote(Quote_widget):
             try:
                 self.post = self.api.write_quote(self.quote, self.source)
             except:
-                print 'Puta madre hubo un error'
+                print 'posteado en blog principal'
             self.close()
         else:
             QtGui.QMessageBox.warning(self,'Error','Quote is required',QtGui.QMessageBox.Ok)

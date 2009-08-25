@@ -43,7 +43,7 @@ class Link(Link_widget):
             try:
                 self.post = self.api.write_link(self.title,self.urllink,self.description)
             except:
-                print 'Puta Madre ocurrio un error wey'
+                print 'posteado en blog principal'
             self.close()
         else:
             QtGui.QMessageBox.warning(self,'Error','URL is required',QtGui.QMessageBox.Ok)

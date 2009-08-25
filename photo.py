@@ -19,9 +19,7 @@ class Photo(Photo_widget):
     
     def OnPost(self):
         #Source == An URL - Data == A Path to the file on your Computer
-        self.source = unicode(self.le_imageurl.text()).encode('utf-8')
-        
-        print self.source
+        self.source = unicode(self.le_imageurl.text()).encode('utf-8')        
         if not self.source:
             self.source = None    
 
@@ -55,7 +53,7 @@ class Photo(Photo_widget):
             try:
                 self.post = self.api.write_photo(self.source, self.data, self.caption, self.click)
             except:            
-                print "Puta madre hubo un error"
+                print "posteado en blog principal"
             self.close()
         else:
             QtGui.QMessageBox.warning(self,"Error","Photo is required",QtGui.QMessageBox.Ok)
