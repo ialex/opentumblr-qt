@@ -41,10 +41,13 @@ class Photo_widget(QtGui.QDialog):
             #Labels
             self.lb_Add = self.CreateLabel("<h1>Upload a Photo</h1>")
             self.lb_photo = self.CreateLabel("<big>Photo</big>")
-            self.lb_limitations = self.CreateLabel("Supports JPEG, GIF, PNG and BMP. <strong>Max photo size is 10 MB.</strong>")
+            self.lb_limitations = self.CreateLabel("Supports JPEG, GIF, PNG and BMP. <strong>Max photo size is 10 MB.</strong>")            
             self.lb_caption = self.CreateLabel("<big>Caption</big> (optional)")
             self.lb_url = self.CreateLabel("Clicking this photo links to the URL:")
             self.lb_useurl = self.CreateLabel("<strong><a href=algo>Use url instead</a></strong>")
+            font = QtGui.QFont()
+            font.setPointSize(8)
+            self.lb_useurl.setFont(font)
             
             #Line edit y button to browse files
             self.FileHBox = QtGui.QHBoxLayout()        
@@ -55,6 +58,7 @@ class Photo_widget(QtGui.QDialog):
             self.le_imageurl = self.CreateLineEdit()
             self.le_imageurl.setVisible(False)        
             self.FileHBox.addWidget(self.le_file)
+            self.FileHBox.addWidget(self.le_imageurl)
             self.FileHBox.addWidget(self.bt_browse)
             #Caption
             self.te_caption = QtGui.QTextEdit()

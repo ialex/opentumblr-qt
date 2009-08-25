@@ -72,6 +72,7 @@ class Photo(Photo_widget):
         self.le_imageurl.setVisible(True)
         self.lb_photo.setText("<big>Photo URL</big>")
         self.lb_useurl.setVisible(False)
+        self.le_imageurl.setFocus()
         
         
         
