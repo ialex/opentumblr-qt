@@ -44,7 +44,7 @@ class Photo_widget(QtGui.QDialog):
             self.lb_limitations = self.CreateLabel("Supports JPEG, GIF, PNG and BMP. <strong>Max photo size is 10 MB.</strong>")            
             self.lb_caption = self.CreateLabel("<big>Caption</big> (optional)")
             self.lb_url = self.CreateLabel("Clicking this photo links to the URL:")
-            self.lb_useurl = self.CreateLabel("<strong><a href=algo>Use url instead</a></strong>")
+            self.lb_useurl = self.CreateLabel("<a href=algo>Use url instead</a>")
             font = QtGui.QFont()
             font.setPointSize(8)
             self.lb_useurl.setFont(font)
