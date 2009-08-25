@@ -39,7 +39,7 @@ class Chat(Chat_widget):
             try:
                 self.post = self.api.write_conversation(self.title, self.conversation)
             except:
-                print 'Puta Madre ocurrio un error'
+                print 'posteado en blog principal'
             self.close()
         else:
             QtGui.QMessageBox.warning(self,'Error','Conversation is required',QtGui.QMessageBox.Ok)
