@@ -1,12 +1,17 @@
-from dashboard_ui import Dashboard_widget
 from PyQt4 import QtCore, QtGui
-from text import Text
-from photo import Photo
-from quote import Quote
-from link import Link
-from chat import Chat
-from audio import Audio
-from video import Video
+
+try:
+    from qtumblr.gui.dashboard_ui import Dashboard_widget
+    from qtumblr import *
+except ImportError:
+    from gui.dashboard_ui import Dashboard_widget
+    from text import Text
+    from photo import Photo
+    from quote import Quote
+    from link import Link
+    from chat import Chat
+    from audio import Audio
+    from video import Video
 
 class Dashboard(Dashboard_widget):
     def __init__(self,parent=None):

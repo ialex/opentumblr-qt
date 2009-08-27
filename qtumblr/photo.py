@@ -1,7 +1,12 @@
-from photo_ui import Photo_widget
 from PyQt4 import QtCore, QtGui
-from tumblr import Api, TumblrError
 import string
+
+try:
+    from qtumblr.gui.photo_ui import Photo_widget
+    from qtumblr.tumblr import Api, TumblrError
+except ImportError:
+    from gui.photo_ui import Photo_widget
+    from tumblr import Api, TumblrError
 
 class Photo(Photo_widget):
     def __init__(self,parent=None):

@@ -1,7 +1,12 @@
-from quote_ui import Quote_widget
 from PyQt4 import QtCore, QtGui
-from tumblr import Api, TumblrError
 import string
+
+try:
+    from qtumblr.guiquote_ui import Quote_widget
+    from qtumblr.tumblr import Api, TumblrError
+except ImportError:
+    from gui.quote_ui import Quote_widget
+    from tumblr import Api, TumblrError
 
 class Quote(Quote_widget):
     def __init__(self,parent=None):

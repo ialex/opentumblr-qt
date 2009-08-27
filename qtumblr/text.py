@@ -1,7 +1,12 @@
-from text_ui import Text_widget
 from PyQt4 import QtCore, QtGui
-from tumblr import Api, TumblrError
 import string
+
+try:
+    from qtumblr.gui.text_ui import Text_widget
+    from qtumblr.tumblr import Api, TumblrError
+except ImportError:
+    from gui.text_ui import Text_widget
+    from tumblr import Api, TumblrError
 
 class Text(Text_widget):
     def __init__(self,parent=None):

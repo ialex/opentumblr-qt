@@ -1,8 +1,13 @@
-from main_ui import Main_widget
 from PyQt4 import QtCore, QtGui
-from tumblr import Api,TumblrAuthError
-from dashboard import Dashboard
 import sys,urllib2
+try:
+        from qtumblr.gui.main_ui import Main_widget
+        from qtumblr.tumblr import Api,TumblrAuthError
+        from qtumblr.dashboard import Dashboard
+except ImportError:
+        from gui.main_ui import Main_widget
+        from tumblr import Api,TumblrAuthError
+        from dashboard import Dashboard
 
 errors = {'403':'Login o password incorrectos','404':'Tumblrlog incorrecto','urlopen':'no ingreso su tumblrlog'}
 
