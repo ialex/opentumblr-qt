@@ -6,6 +6,7 @@ from quote import Quote
 from link import Link
 from chat import Chat
 from audio import Audio
+from video import Video
 
 class Dashboard(Dashboard_widget):
     def __init__(self,parent=None):
@@ -48,8 +49,8 @@ class Dashboard(Dashboard_widget):
         audio.show()
     
     def OnVideo(self):
-        print 'video'
-        pass
+        video = Video(self)
+        video.show()
     
     def OnLogout(self):
         self.close()       
