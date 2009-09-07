@@ -1,12 +1,15 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+import os, sys
 
 packages_path = os.path.abspath(os.path.dirname(__file__))
 
 datafiles = []
 doc_files = []
 icon_files = []
+image_files = []
 
 prefix = sys.prefix + '/'
+qtumblr = packages_path + '/qtumblr'
 
 for arg in sys.argv:
 	if arg.startswith('--prefix='):
@@ -56,9 +59,10 @@ setup(
     author_email = 'admin at ialex.org',
     url = 'http://ialex.org',
     license = 'MIT',
-    scripts = ['qtumblr-client.py'],
+    scripts = ['qtumblr/qtumblr-client.py'],
     packages = find_packages(),
     package_dir = {'qtumblr' : qtumblr}, 
     data_files = datafiles,
     install_requires = ['poster','simplejson']
      )
+

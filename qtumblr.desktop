@@ -1,0 +1,23 @@
+[Desktop Entry]
+Categories=Application;Network;
+Comment[en_US]=Desktop client developed in Qt for tumblr
+Comment=Desktop client developed in Qt for tumblr
+Comment[es]=Cliente de escritorio multiplataforma desarrollado en wxpython para tumblr
+Exec=qtumblr-client.py
+GenericName[en_US]=Tumblr Client based on Opentumblr
+GenericName=Tumblr Client based on Opentumblr
+GenericName[es]=\sCliente Tumblr
+Icon=opentumblr
+MimeType=
+Name[en_US]=Qt Tumblr Client
+Name=Qt Tumblr Client
+Name[es]=\sCliente Qtumblr
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
