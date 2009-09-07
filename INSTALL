@@ -1,1 +1,6 @@
- 
+
+PASOS
+
+* LINUX	
+  # apt-get install python-qt4 python-setuptools
+  #  
