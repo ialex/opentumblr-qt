@@ -61,7 +61,7 @@ setup(
     license = 'MIT',
     scripts = ['qtumblr/qtumblr-client.py'],
     packages = find_packages(),
-    package_dir = {'qtumblr' : qtumblr}, 
+    #package_dir = {'qtumblr' : qtumblr,'gui' : gui,}, 
     data_files = datafiles,
     install_requires = ['poster','simplejson']
      )

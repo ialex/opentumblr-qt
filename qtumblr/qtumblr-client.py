@@ -1,9 +1,10 @@
 from PyQt4 import QtCore, QtGui
 import sys,urllib2
+
 try:
-        from qtumblr.gui.main_ui import Main_widget
-        from qtumblr.tumblr import Api,TumblrAuthError
-        from qtumblr.dashboard import Dashboard
+		from qtumblr.gui.main_ui import Main_widget
+		from qtumblr.tumblr import Api,TumblrAuthError
+ 		from qtumblr.dashboard import Dashboard
 except ImportError:
         from gui.main_ui import Main_widget
         from tumblr import Api,TumblrAuthError

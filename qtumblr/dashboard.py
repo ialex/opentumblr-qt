@@ -1,8 +1,14 @@
 from PyQt4 import QtCore, QtGui
 
 try:
-    from qtumblr.gui.dashboard_ui import Dashboard_widget
-    from qtumblr import *
+	from qtumblr.gui.dashboard_ui import Dashboard_widget
+	from qtumblr.text import Text
+	from qtumblr.photo import Photo
+	from qtumblr.quote import Quote
+	from qtumblr.link import Link
+	from qtumblr.chat import Chat
+	from qtumblr.audio import Audio
+	from qtumblr.video import Video
 except ImportError:
     from gui.dashboard_ui import Dashboard_widget
     from text import Text
