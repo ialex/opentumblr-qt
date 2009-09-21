@@ -1,5 +1,11 @@
-El proyecto esta aun en sus primeros pasos por lo que las imagenes no estan en el repo
-algunas funciones del sistema podrian fallar es necesario tener agregadas las imagenes de opentumblr a pixmaps/opentumblr
-el codigo deberia reestructurarse tan pronto el trabajo y mi novia lo permitan 
-Any hack is welcome =)
+EL PROYECTO ES ACTUALMENTE USABLE SALVO ALGUNOS PROBLEMAS QUE TENGO QUE RESOLVER CON EL SETUP.PY
+YA QUE NO HE PODIDO HACER QUE FUNCIONE A LA PERFECCION CON EASY_SETUP PERO SI CLONAN EL REPOSITORIO
+O DESCARGAN EL TAR CON "PYTHON SETUP.PY INSTALL" DEBEN TENER FUNCIONANDO LA APLICACION EN LINUX
+LOS REQUERIMIENTOS SON:
+
+PYTHON-QT4
+PYTHON-SETUPTOOLS
+
+EL SETUP.PY SE ENCARGA DE INSTALAR AUTOMATICAMENTE POSTER Y SIMPLEJSON POR USTEDES CHEERS
+CUALQUIER HACK ES BIENVENIDO.
 
