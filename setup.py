@@ -63,6 +63,7 @@ setup(
     packages = find_packages(),
     #package_dir = {'qtumblr' : qtumblr,'gui' : gui,}, 
     data_files = datafiles,
+    include_package_data = True,
     install_requires = ['poster','simplejson']
      )
 

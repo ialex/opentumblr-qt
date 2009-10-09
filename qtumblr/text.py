@@ -55,4 +55,5 @@ class Text(Text_widget):
         else:
             QtGui.QMessageBox.warning(self,'Error','Text Post is required',QtGui.QMessageBox.Ok)
     
-    
+    def OnCopy():
+        self.le_title.text

@@ -20,8 +20,8 @@ class Cliente_Opentumblr(Main_widget):
                 QtCore.QObject.connect(self.bt_login, QtCore.SIGNAL('clicked()'), self.OnAuthTumblr)            
                 
                 #Debug properties                                                                      
-                #self.le_mail.setText('admin@ialex.org')                                                
-                #self.le_url.setText('http://ialex.tumblr.com')
+                self.le_mail.setText('admin@ialex.org')                                                
+                self.le_url.setText('http://ialex.tumblr.com')
                 
         def OnAuthTumblr(self):
                 self.User = self.le_mail.text()                
