@@ -48,7 +48,7 @@ if not os.path.isdir(ipath_images):
 
 datafiles.append(('share/pixmaps/', icon_files))
 datafiles.append((ipath_docs, doc_files))
-datafiles.append(('share/applications',[packages_path+'/qtumblr.desktop']))
+datafiles.append(('share/applications',[packages_path + '/qtumblr.desktop']))
 datafiles.append((ipath_dashboard, image_files))
 
 setup(
