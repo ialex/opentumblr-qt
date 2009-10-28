@@ -31,7 +31,7 @@ class Text_widget(QtGui.QDialog):
       return button   
  
    def setupUi(self):
-      self.setWindowTitle('Opentumblr  Text')
+      self.setWindowTitle('Opentumblr-qt Text')
       self.resize(655,576)
       
       #Top layout

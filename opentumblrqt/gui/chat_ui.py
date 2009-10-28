@@ -31,7 +31,7 @@ class Chat_widget(QtGui.QDialog):
         return linedit
     
     def setupUi(self):
-        self.setWindowTitle('Opemtumblr Chat')
+        self.setWindowTitle('Opemtumblr-qt Chat')
         self.resize(655,386)
         
         Hbox = QtGui.QHBoxLayout()

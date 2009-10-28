@@ -2,8 +2,8 @@ from PyQt4 import QtCore, QtGui
 import string
 
 try:
-    from qtumblr.gui.photo_ui import Photo_widget
-    from qtumblr.tumblr import Api, TumblrError
+    from opentumblrqt.gui.photo_ui import Photo_widget
+    from opentumblrqt.tumblr import Api, TumblrError
 except ImportError:
     from gui.photo_ui import Photo_widget
     from tumblr import Api, TumblrError

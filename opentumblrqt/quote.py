@@ -2,19 +2,18 @@ from PyQt4 import QtCore, QtGui
 import string
 
 try:
-    from qtumblr.gui.video_ui import Video_widget
-    from qtumblr.tumblr import Api, TumblrError
+    from opentumblrqt.guiquote_ui import Quote_widget
+    from opentumblrqt.tumblr import Api, TumblrError
 except ImportError:
-    from gui.video_ui import Video_widget
+    from gui.quote_ui import Quote_widget
     from tumblr import Api, TumblrError
 
-
-class Video(Video_widget):
+class Quote(Quote_widget):
     def __init__(self,parent=None):
-        super(Video,self).__init__(parent)        
+        super(Quote,self).__init__(parent)        
         self.setupUi()
         self.api = parent.api
-        #Conectar eventos 
+        #Conectar eventos
         self.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
         self.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
 
@@ -22,12 +21,12 @@ class Video(Video_widget):
         self.close()
 
     def OnPost(self):
-        self.embed = unicode(self.te_videourl.toPlainText()).encode('utf-8')
-        if self.te_caption.toPlainText().isEmpty():
-            self.caption = ''
-        else:
-            self.caption = unicode(self.te_caption.toPlainText()).encode('utf-8')
-        if self.advanced.te_tags.toPlainText().isEmpty():
+        self.quote = unicode(self.te_quote.toPlainText()).encode('utf-8')
+        if self.te_source.document().isEmpty():
+            self.te_source = ''
+        else:            
+            self.source = unicode(self.te_source.toPlainText()).encode('utf-8')
+        if self.advanced.te_tags.document().isEmpty():
             self.tags = ''
         else:
             self.tags = unicode(self.advanced.te_tags.toPlainText()).encode('utf-8')
@@ -39,13 +38,13 @@ class Video(Video_widget):
         else:
             self.private = 0
 
-        if self.embed:
+        if self.quote:
             #self.format = None
             self.api = Api(self.api.name, self.api.email, self.api.password, self.private, self.date, self.tags)
             try:
-                self.post = self.api.write_video(self.embed, self.caption)
+                self.post = self.api.write_quote(self.quote, self.source)
             except:
-                print "posteado en el blog primario"
+                print 'posteado en blog principal'
             self.close()
         else:
-            QtGui.QMessageBox.warning(self,'Error','Embeded Video is required',QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.warning(self,'Error','Quote is required',QtGui.QMessageBox.Ok)

@@ -23,7 +23,7 @@ class Main_widget(QtGui.QDialog):
                 return linedit
                 
         def setupUi(self):
-                self.setWindowTitle("Opentumblr")
+                self.setWindowTitle("Opentumblr-qt")
                 self.resize(341,418)
                 
                 #Layout de la ventana

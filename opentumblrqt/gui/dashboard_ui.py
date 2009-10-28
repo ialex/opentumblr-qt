@@ -4,7 +4,7 @@ from PyQt4 import QtCore, QtGui
 class Dashboard_widget(QtGui.QDialog):
     def CreateIcon(self,archivo):
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/qtumblr/dashboard/" + archivo), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/opentumblr/dashboard/" + archivo), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         return icon
     
     def CreateButton(self,icon):
@@ -14,7 +14,7 @@ class Dashboard_widget(QtGui.QDialog):
         return button
     
     def setupUi(self):
-        self.setWindowTitle("Opentumblr  Dashboard")
+        self.setWindowTitle("Opentumblr-qt Dashboard")
         self.resize(341,418)
         
         #Grid

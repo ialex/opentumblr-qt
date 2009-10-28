@@ -31,7 +31,7 @@ class Photo_widget(QtGui.QDialog):
             return button 
         
     def setupUi(self):
-            self.setWindowTitle("Opemtumblr Photo")
+            self.setWindowTitle("Opemtumblr-qt Photo")
             self.resize(655,386)
             
             #Top layout
