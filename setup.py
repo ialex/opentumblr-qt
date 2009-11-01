@@ -18,6 +18,8 @@ for arg in sys.argv:
 
 ipath_docs = '%sshare/doc/qtumblr/' % prefix
 ipath_images = '%sshare/pixmaps/qtumblr/' % prefix
+ipath_icons = '%sshare/pixmaps/' % prefix
+ipath_desktop_file = '%sshare/applications/' % prefix
 ipath_dashboard = ipath_images+'dashboard/'
 
 path_images = packages_path + '/images/'
@@ -46,9 +48,9 @@ if not os.path.isdir(ipath_images):
 	os.mkdir(ipath_images)
 	os.mkdir(ipath_dashboard)
 
-datafiles.append(('share/pixmaps/', icon_files))
+datafiles.append((ipath_icons, icon_files))
 datafiles.append((ipath_docs, doc_files))
-datafiles.append(('share/applications',[packages_path + '/qtumblr.desktop']))
+datafiles.append((ipath_desktop_file,[packages_path + '/qtumblr.desktop']))
 datafiles.append((ipath_dashboard, image_files))
 
 setup(
@@ -59,11 +61,12 @@ setup(
     author_email = 'admin at ialex.org',
     url = 'http://ialex.org',
     license = 'MIT',
-    scripts = ['qtumblr/qtumblr-client.py'],
+    scripts = ['opentumblrqt/opentumblr-qt-client.py'],
     packages = find_packages(),
     #package_dir = {'qtumblr' : qtumblr,'gui' : gui,}, 
     data_files = datafiles,
     include_package_data = True,
     install_requires = ['poster','simplejson']
      )
-
+print datafiles
+print packages_path
