@@ -1,7 +1,11 @@
-PASOS
+INSTALLATION STEPS
 
-* LINUX	
-  # apt-get install python-qt4 python-setuptools
-  tar -zxvf Qtumblr-0.1.tar.gz
-  cd Qtumblr-0.1
-  #python setup.py install
+* LINUX
+	#easy_install simplejson
+	#easy_install poster
+	#tar -zxvf opentumblr-qt-version.tar.gz
+	#cd opentumblr-qt-version
+	#python setup.py install
+ 
+Run OpenTumblr
+	$opentumblr-qt-client.py
