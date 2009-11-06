@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from PyQt4 import QtCore, QtGui
 from advancedoptions import AdvancedOptions_widget
 

@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from PyQt4 import QtCore,QtGui
 
 class AdvancedOptions_widget(QtGui.QVBoxLayout):

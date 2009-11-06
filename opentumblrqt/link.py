@@ -1,5 +1,7 @@
+#!/usr/bin/python
 from PyQt4 import QtCore, QtGui
 import string
+
 try:
     from opentumblrqt.gui.link_ui import Link_widget
     from opentumblrqt.tumblr import Api, TumblrError

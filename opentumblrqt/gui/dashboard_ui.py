@@ -1,4 +1,4 @@
-
+#!/usr/bin/python
 from PyQt4 import QtCore, QtGui
 
 class Dashboard_widget(QtGui.QDialog):
