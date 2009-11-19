@@ -12,8 +12,9 @@ except ImportError:
 class Audio(Audio_widget):
     def __init__(self,parent=None):
         super(Audio,self).__init__(parent)        
-        self.setupUi()
+        self.setupUi(self)
         self.api = parent.api
+        
         #Conectar eventos 
         self.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
         self.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
@@ -76,3 +77,4 @@ class Audio(Audio_widget):
             self.le_audiourl.setVisible(False)
             self.bt_browse.setVisible(True)            
             self.le_audiourl.setText('')
+

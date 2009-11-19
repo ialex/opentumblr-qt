@@ -12,7 +12,7 @@ except ImportError:
 class Photo(Photo_widget):
     def __init__(self,parent=None):
         super(Photo_widget,self).__init__(parent)        
-        self.setupUi()
+        self.setupUi(self)
         self.api = parent.api
         #Conectar eventos
         self.connect(self.bt_cancel, QtCore.SIGNAL("clicked()"), self.OnCancel)

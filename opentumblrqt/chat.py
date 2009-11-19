@@ -8,12 +8,12 @@ try:
 except ImportError:
     from gui.chat_ui import Chat_widget
     from tumblr import Api, TumblrError
-
+    
 
 class Chat(Chat_widget):
     def __init__(self,parent=None):
         super(Chat,self).__init__(parent)        
-        self.setupUi()
+        self.setupUi(self)
         self.api = parent.api
         #Conectar eventos 
         self.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
@@ -50,3 +50,4 @@ class Chat(Chat_widget):
             self.close()
         else:
             QtGui.QMessageBox.warning(self,'Error','Conversation is required',QtGui.QMessageBox.Ok)
+

@@ -4,7 +4,7 @@ from PyQt4 import QtCore, QtGui
 class Dashboard_widget(QtGui.QDialog):
     def CreateIcon(self,archivo):
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/opentumblr/dashboard/" + archivo), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/opentumblr-qt/dashboard/" + archivo), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         return icon
     
     def CreateButton(self,icon):

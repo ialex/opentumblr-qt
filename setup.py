@@ -26,7 +26,9 @@ ipath_dashboard = ipath_images+'dashboard/'
 
 path_images = packages_path + '/images/'
 
-images = ['audio.png','chat.png','link.png','photo.png','quote.png','text.png','video.png']
+images = ['audio.png','chat.png','link.png','photo.png','quote.png','text.png','video.png',
+		  'bold.png','italic.png','strike.png','more.png','link_editor.png','image.png','preview.png',
+		  'close.png']
 for img in images:
 	image_files.append(path_images + img)
 

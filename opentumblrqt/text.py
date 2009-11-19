@@ -12,8 +12,9 @@ except ImportError:
 class Text(Text_widget):
     def __init__(self,parent=None):
         super(Text_widget,self).__init__(parent)        
-        self.setupUi()
+        self.setupUi(self)
         self.api = parent.api
+        
         #Conectar eventos
         QtCore.QObject.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
         QtCore.QObject.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
@@ -58,3 +59,4 @@ class Text(Text_widget):
     
     def OnCopy():
         self.le_title.text
+
