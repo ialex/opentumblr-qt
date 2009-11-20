@@ -27,6 +27,11 @@ class Main_widget(QtGui.QDialog):
                 self.setWindowTitle("Opentumblr-qt")
                 self.resize(341,418)
                 
+                #window Icon
+                icon = QtGui.QIcon()
+                icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/opentumblr-qt/dashboard/opentumblr_icon.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+                self.setWindowIcon(icon)
+                
                 #Layout de la ventana
                 self.Vbox = QtGui.QVBoxLayout(self)
                 

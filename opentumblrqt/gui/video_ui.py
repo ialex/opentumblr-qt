@@ -23,6 +23,11 @@ class Video_widget(QtGui.QDialog):
         self.setWindowTitle('Opentumblr-qt Video')
         self.resize(655,386)
         
+        #window Icon
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/opentumblr-qt/dashboard/opentumblr_icon.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.setWindowIcon(icon)
+        
         Hbox = QtGui.QHBoxLayout()
         self.Vbox = QtGui.QVBoxLayout()
         

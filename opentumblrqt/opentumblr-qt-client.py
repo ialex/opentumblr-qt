@@ -21,14 +21,13 @@ class Cliente_Opentumblr(Main_widget):
                 #Conectar eventos
                 self.connect(self.bt_login, QtCore.SIGNAL('clicked()'),self.OnAuthTumblr)                                
                 #Debug properties
-                self.rememberme.setCheckState(0)
+                self.rememberme.setCheckState(0)                                                        
+                
                 if(QtCore.QFile().exists(QtCore.QDir().homePath() + '/.opentumblr')):
                     file = open(QtCore.QDir().homePath() + '/.opentumblr','r')
                     self.le_mail.setText(file.readline())                                                
                     self.le_url.setText(file.readline())
-                                                                                          
-                #self.le_mail.setText('admin@ialex.org')                                                
-                #self.le_url.setText('http://ialex.tumblr.com')
+                                                                                    
 
         def OnAuthTumblr(self):
                 self.User = self.le_mail.text()                
