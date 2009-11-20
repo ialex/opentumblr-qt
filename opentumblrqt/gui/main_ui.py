@@ -34,6 +34,8 @@ class Main_widget(QtGui.QDialog):
                 self.lb_mail = self.CreateLabel("Mail")
                 self.lb_password = self.CreateLabel("Password")
                 self.lb_url = self.CreateLabel("Login")
+                self.lb_rememberme = self.CreateLabel("Remember Me")
+                
                 
                 #Creamos Cajas de texto
                 self.le_mail = self.CreateLineEdit()
@@ -49,6 +51,9 @@ class Main_widget(QtGui.QDialog):
                 self.bt_login.setMaximumSize(QtCore.QSize(16777215, 58))
                 self.bt_login.setSizePolicy(sizePolicy)
                 
+                #Remember me Checkbox
+                self.rememberme = QtGui.QCheckBox()
+                
                 #Agregamos los wigdets a layout :D
                 self.Vbox.addWidget(self.lb_mail)
                 self.Vbox.addWidget(self.le_mail)
@@ -56,6 +61,8 @@ class Main_widget(QtGui.QDialog):
                 self.Vbox.addWidget(self.le_password)
                 self.Vbox.addWidget(self.lb_url)
                 self.Vbox.addWidget(self.le_url)
+                self.Vbox.addWidget(self.lb_rememberme)
+                self.Vbox.addWidget(self.rememberme)                        
                 self.Vbox.addWidget(self.bt_login)
                 
                 #Definimos layout de la ventana

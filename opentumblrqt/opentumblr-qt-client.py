@@ -19,11 +19,16 @@ class Cliente_Opentumblr(Main_widget):
                 super(Main_widget, self).__init__(parent)
                 self.setupUi()                             
                 #Conectar eventos
-                QtCore.QObject.connect(self.bt_login, QtCore.SIGNAL('clicked()'),self.OnAuthTumblr)                
-
-                #Debug properties                                                                      
-                self.le_mail.setText('admin@ialex.org')                                                
-                self.le_url.setText('http://ialex.tumblr.com')
+                self.connect(self.bt_login, QtCore.SIGNAL('clicked()'),self.OnAuthTumblr)                                
+                #Debug properties
+                self.rememberme.setCheckState(0)
+                if(QtCore.QFile().exists(QtCore.QDir().homePath() + '/.opentumblr')):
+                    file = open(QtCore.QDir().homePath() + '/.opentumblr','r')
+                    self.le_mail.setText(file.readline())                                                
+                    self.le_url.setText(file.readline())
+                                                                                          
+                #self.le_mail.setText('admin@ialex.org')                                                
+                #self.le_url.setText('http://ialex.tumblr.com')
 
         def OnAuthTumblr(self):
                 self.User = self.le_mail.text()                
@@ -35,11 +40,16 @@ class Cliente_Opentumblr(Main_widget):
 
                     try:
                         self.auth = self.api.auth_check()
+                                                
                         #Abrir la ventana del dashboard
                         dashboard = Dashboard(self)                                                                  
                         self.hide()
                         dashboard.show()                                
-                        #print 'Te haz logueado'
+                        if self.rememberme.checkState() == 2:
+                            file = open(QtCore.QDir().homePath() + '/.opentumblr','w')
+                            file.write(self.le_mail.text() + '\n')
+                            file.write(self.le_url.text() + '\n')
+                                     
                     except TumblrAuthError:	    		
                         self.error = errors['403']
                     except urllib2.HTTPError:
@@ -51,7 +61,10 @@ class Cliente_Opentumblr(Main_widget):
                             QtGui.QMessageBox.warning(self,'Error','Occurrio un error: \n' + self.error,QtGui.QMessageBox.Ok)			    
                 else:
                     QtGui.QMessageBox.warning(self,'Error','Todos los Campos son necesarios',QtGui.QMessageBox.Ok)		
-
+            
+        #def OnRemember(self):
+        #    print self.rememberme.checkState()
+            
 if __name__ == '__main__':
         app = QtGui.QApplication(sys.argv)
         tumblr_client = Cliente_Opentumblr()        
