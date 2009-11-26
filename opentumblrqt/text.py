@@ -28,7 +28,7 @@ class Text(Text_widget):
         else:            
             self.title = unicode(self.le_title.text()).encode('utf-8')
         
-        self.body = unicode(self.te_post.toPlainText())
+        self.body = unicode(self.te_post.te_post.toPlainText())
         if self.advanced.te_tags.toPlainText().isEmpty():
             self.tags = ''
         else:
@@ -46,8 +46,8 @@ class Text(Text_widget):
 
         if self.body:
             #self.format = None
-            self.api = Api(self.api.name, self.api.email, self.api.password, self.private, self.date, self.tags)
-            try:
+            self.api = Api(self.api.name, self.api.email, self.api.password, self.private, self.date, self.tags)                        
+            try:                
                 self.post = self.api.write_regular(self.title, self.body)
             except:
                 print 'posteado en blog principal'

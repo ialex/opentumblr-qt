@@ -3,8 +3,8 @@ from PyQt4 import QtCore, QtGui
 import string
 
 try:
-    from qtumblr.gui.chat_ui import Chat_widget
-    from qtumblr.tumblr import Api, TumblrError
+    from opentumblrqt.gui.chat_ui import Chat_widget
+    from opentumblrqt.tumblr import Api, TumblrError
 except ImportError:
     from gui.chat_ui import Chat_widget
     from tumblr import Api, TumblrError

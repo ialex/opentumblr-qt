@@ -3,7 +3,7 @@ from PyQt4 import QtCore, QtGui
 import string
 
 try:
-    from opentumblrqt.guiquote_ui import Quote_widget
+    from opentumblrqt.gui.quote_ui import Quote_widget
     from opentumblrqt.tumblr import Api, TumblrError
 except ImportError:
     from gui.quote_ui import Quote_widget

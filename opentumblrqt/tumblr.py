@@ -35,7 +35,7 @@ try:
 except ImportError:
     from django.utils import simplejson
 
-GENERATOR = 'python-tumblr'
+GENERATOR = 'opentumblr-qt'
 PAGESIZE = 50  
 
 

@@ -40,7 +40,6 @@ class TumblrTextEdit(QtGui.QVBoxLayout):
             
     def setupWidget(self,parent):
                 
-        
         self.MenuBar = QtGui.QHBoxLayout(parent)
         
         self.bt_bold = self.CreateButton(self.CreateIcon("bold.png"),parent)    
