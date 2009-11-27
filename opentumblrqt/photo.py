@@ -36,7 +36,7 @@ class Photo(Photo_widget):
         if self.te_caption.toPlainText().isEmpty():
             self.caption = ''
         else:
-            self.caption = unicode(self.te_caption.toPlainText()).encode('utf-8')
+            self.caption = unicode(self.te_caption.te_post.toPlainText()).encode('utf-8')
         if self.le_link.text().isEmpty():
             self.click = ''
         else:
