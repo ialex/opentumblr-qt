@@ -106,9 +106,10 @@ class TumblrTextEdit(QtGui.QVBoxLayout):
     
     def OnPreview(self):
         self.text_source = self.te_post.toPlainText()
+        self.text_html = self.te_post.toPlainText().replace('\n','<br>')                
         self.te_post.setReadOnly(True)
         self.te_post.clear()
-        self.te_post.insertHtml(self.text_source)
+        self.te_post.insertHtml(self.text_html)
         
         self.bt_preview.setVisible(False)
         self.bt_close_preview.setVisible(True)
