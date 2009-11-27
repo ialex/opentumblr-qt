@@ -29,7 +29,7 @@ class Link(Link_widget):
         if  self.te_description.toPlainText().isEmpty():
             self.te_description = ''
         else:
-            self.description = unicode(self.te_description.toPlainText()).encode('utf-8')
+            self.description = unicode(self.te_description.te_post.toPlainText()).encode('utf-8')
         if self.advanced.te_tags.toPlainText().isEmpty():
             self.tags = ''
         else:
