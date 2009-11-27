@@ -26,7 +26,7 @@ class Quote(Quote_widget):
         if self.te_source.document().isEmpty():
             self.te_source = ''
         else:            
-            self.source = unicode(self.te_source.toPlainText()).encode('utf-8')
+            self.source = unicode(self.te_source.te_post.toPlainText()).encode('utf-8')
         if self.advanced.te_tags.document().isEmpty():
             self.tags = ''
         else:
