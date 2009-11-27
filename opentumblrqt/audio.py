@@ -35,7 +35,7 @@ class Audio(Audio_widget):
         if self.te_description.toPlainText().isEmpty():
             self.caption = ''
         else:
-            self.caption = unicode(self.te_description.toPlainText()).encode('utf-8')
+            self.caption = unicode(self.te_description.te_post.toPlainText()).encode('utf-8')
         if self.advanced.te_tags.document().isEmpty():
             self.tags = ''
         else:
