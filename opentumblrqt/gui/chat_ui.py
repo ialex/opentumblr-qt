@@ -51,7 +51,7 @@ class Chat_widget(QtGui.QDialog):
         self.lb_intructions = self.CreateLabel("<strong>Example</strong><br />Tourist: Could you give us directions to Olive Garden?<br />New Yorker: No, but I could give you directions to an actual Italian restaurant.",parent)
         
         self.le_title = self.CreateLineEdit(parent)
-        self.te_chat = TumblrTextEdit()
+        self.te_chat = QtGui.QTextEdit()
         
         #button box
         self.BtBox = QtGui.QHBoxLayout()
