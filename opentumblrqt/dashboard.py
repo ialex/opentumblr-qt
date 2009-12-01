@@ -35,6 +35,8 @@ class Dashboard(Dashboard_widget):
                 QtCore.QObject.connect(self.bt_audio, QtCore.SIGNAL('clicked()'), self.OnAudio)
                 QtCore.QObject.connect(self.bt_video, QtCore.SIGNAL('clicked()'), self.OnVideo)
                 QtCore.QObject.connect(self.bt_logout, QtCore.SIGNAL('clicked()'), self.OnLogout)
+                #systray
+                #self.connect(self,QtCore.SIGNAL('finished(int)'),self.OnClose)
 
         def OnText(self):
                 text = Text(self)
@@ -65,4 +67,12 @@ class Dashboard(Dashboard_widget):
                 video.show()
 
         def OnLogout(self):
-                self.close()       
+                self.close()
+        
+        #def OnClose(self):
+        #    if QtGui.QSystemTrayIcon().isSystemTrayAvailable():            
+        #        icon = QtGui.QIcon()
+        #        icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/opentumblr-qt/dashboard/opentumblr_icon.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        #        tray = QtGui.QSystemTrayIcon()
+        #        tray.setIcon(icon)
+        #        tray.show()                    

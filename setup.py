@@ -59,7 +59,7 @@ datafiles.append((ipath_dashboard, image_files))
 
 setup(
     name = 'opentumblr-qt',
-    version = '0.1',
+    version = '0.2',
     description = 'Qt Tumblr Client based on Opentumblr',
     author = 'Alejandro Villanueva',
     author_email = 'admin at ialex.org',

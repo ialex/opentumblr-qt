@@ -18,9 +18,8 @@ class Cliente_Opentumblr(Main_widget):
         super(Main_widget, self).__init__(parent)
         self.setupUi()                             
         #Conectar eventos
-        self.connect(self.bt_login, QtCore.SIGNAL('clicked()'),self.OnAuthTumblr)                                
-        #Debug properties
-        self.rememberme.setCheckState(0)                                                        
+        self.connect(self.bt_login, QtCore.SIGNAL('clicked()'),self.OnAuthTumblr)                                                    
+        self.rememberme.setCheckState(QtCore.Qt.Unchecked)                                                        
         
         if(QtCore.QFile().exists(QtCore.QDir().homePath() + '/.opentumblr')):
             file = open(QtCore.QDir().homePath() + '/.opentumblr','r')
@@ -58,10 +57,7 @@ class Cliente_Opentumblr(Main_widget):
                 if self.error != None:
                     QtGui.QMessageBox.warning(self,'Error','Occurrio un error: \n' + self.error,QtGui.QMessageBox.Ok)			    
         else:
-            QtGui.QMessageBox.warning(self,'Error','Todos los Campos son necesarios',QtGui.QMessageBox.Ok)		
-        
-    #def OnRemember(self):
-    #    print self.rememberme.checkState()
+            QtGui.QMessageBox.warning(self,'Error','Todos los Campos son necesarios',QtGui.QMessageBox.Ok)		            
             
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
