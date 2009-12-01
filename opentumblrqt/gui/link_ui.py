@@ -54,6 +54,7 @@ class Link_widget(QtGui.QDialog):
         self.le_title = self.CreateLineEdit(parent)
         self.le_URL = self.CreateLineEdit(parent)
         self.te_description = TumblrTextEdit()
+        self.te_description.pariente = parent
         
         #button box
         self.BtBox = QtGui.QHBoxLayout()

@@ -38,6 +38,7 @@ class Video_widget(QtGui.QDialog):
         
         self.te_videourl = QtGui.QTextEdit(parent)
         self.te_caption = TumblrTextEdit()
+        self.te_caption.pariente = parent
         
         #button box
         self.BtBox = QtGui.QHBoxLayout()    

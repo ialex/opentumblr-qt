@@ -68,7 +68,8 @@ class Photo_widget(QtGui.QDialog):
             self.FileHBox.addWidget(self.le_imageurl)
             self.FileHBox.addWidget(self.bt_browse)
             #Caption
-            self.te_caption = TumblrTextEdit()            
+            self.te_caption = TumblrTextEdit()
+            self.te_caption.pariente = parent            
             self.le_link = self.CreateLineEdit(parent)
             
             #button box

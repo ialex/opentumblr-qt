@@ -38,11 +38,12 @@ class Quote_widget(QtGui.QDialog):
         self.lb_source = self.CreateLabel('<big>Source</big> (optional)',parent)
         
         #textedit
-        self.te_quote = TumblrTextEdit()
+        self.te_quote = QtGui.QTextEdit(parent)
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.te_quote.te_post.setFont(font)        
-        self.te_source = QtGui.QTextEdit(parent)
+        self.te_quote.setFont(font)        
+        self.te_source = TumblrTextEdit()
+        self.te_source.pariente = parent  
         
         #button box
         self.BtBox = QtGui.QHBoxLayout()
@@ -58,9 +59,9 @@ class Quote_widget(QtGui.QDialog):
         
         self.Vbox.addWidget(self.lb_Add)
         self.Vbox.addWidget(self.lb_quote)
-        self.Vbox.addLayout(self.te_quote)
+        self.Vbox.addWidget(self.te_quote)
         self.Vbox.addWidget(self.lb_source)
-        self.Vbox.addWidget(self.te_source)
+        self.Vbox.addLayout(self.te_source)
         self.Vbox.addLayout(self.BtBox)
         
         #Advanced options

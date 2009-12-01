@@ -70,7 +70,7 @@ class Chat_widget(QtGui.QDialog):
         self.Vbox.addWidget(self.le_title)
         self.Vbox.addWidget(self.lb_dialog)
         self.Vbox.addWidget(self.lb_intructions)
-        self.Vbox.addLayout(self.te_chat)
+        self.Vbox.addWidget(self.te_chat)
         self.Vbox.addLayout(self.BtBox)
         
          #Advanced options

@@ -69,6 +69,7 @@ class Audio_widget(QtGui.QDialog):
 
         #Description
         self.te_description = TumblrTextEdit()
+        self.te_description.pariente = parent        
         
         #button box
         self.BtBox = QtGui.QHBoxLayout()    
