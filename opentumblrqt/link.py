@@ -26,7 +26,7 @@ class Link(Link_widget):
             self.title = ''
         else:
             self.title = unicode(self.le_title.text()).encode('utf-8')        
-        if  self.te_description.toPlainText().isEmpty():
+        if  self.te_description.te_post.toPlainText().isEmpty():
             self.te_description = ''
         else:
             self.description = unicode(self.te_description.te_post.toPlainText()).encode('utf-8')

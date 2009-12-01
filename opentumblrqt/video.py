@@ -24,7 +24,7 @@ class Video(Video_widget):
 
     def OnPost(self):
         self.embed = unicode(self.te_videourl.toPlainText()).encode('utf-8')
-        if self.te_caption.toPlainText().isEmpty():
+        if self.te_caption.te_post.toPlainText().isEmpty():
             self.caption = ''
         else:
             self.caption = unicode(self.te_caption.te_post.toPlainText()).encode('utf-8')

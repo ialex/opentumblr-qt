@@ -33,7 +33,7 @@ class Photo(Photo_widget):
         if not self.data:
             self.data = None
         
-        if self.te_caption.toPlainText().isEmpty():
+        if self.te_caption.te_post.toPlainText().isEmpty():
             self.caption = ''
         else:
             self.caption = unicode(self.te_caption.te_post.toPlainText()).encode('utf-8')

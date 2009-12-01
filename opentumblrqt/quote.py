@@ -23,7 +23,7 @@ class Quote(Quote_widget):
 
     def OnPost(self):
         self.quote = unicode(self.te_quote.toPlainText()).encode('utf-8')
-        if self.te_source.document().isEmpty():
+        if self.te_source.te_post.toPlainText().isEmpty():
             self.te_source = ''
         else:            
             self.source = unicode(self.te_source.te_post.toPlainText()).encode('utf-8')

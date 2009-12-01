@@ -32,7 +32,7 @@ class Audio(Audio_widget):
         self.source = unicode(self.le_audiourl.text()).encode('utf-8')
         if not self.source:
             self.source = None    	
-        if self.te_description.toPlainText().isEmpty():
+        if self.te_description.te_post.toPlainText().isEmpty():
             self.caption = ''
         else:
             self.caption = unicode(self.te_description.te_post.toPlainText()).encode('utf-8')
