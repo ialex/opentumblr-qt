@@ -19,7 +19,7 @@ class Link(Link_widget):
         self.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
 
     def OnCancel(self):
-        self.close()
+        self.hide()
 
     def OnPost(self):
         if self.le_title.text().isEmpty():

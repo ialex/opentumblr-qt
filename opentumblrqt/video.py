@@ -20,7 +20,7 @@ class Video(Video_widget):
         self.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
 
     def OnCancel(self):
-        self.close()
+        self.hide()
 
     def OnPost(self):
         self.embed = unicode(self.te_videourl.toPlainText()).encode('utf-8')

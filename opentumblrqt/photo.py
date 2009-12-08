@@ -21,7 +21,7 @@ class Photo(Photo_widget):
         self.connect(self.lb_useurl, QtCore.SIGNAL("linkActivated(QString)"), self.OnUseUrl)
         
     def OnCancel(self):
-        self.close()
+        self.hide()
     
     def OnPost(self):
         #Source == An URL - Data == A Path to the file on your Computer

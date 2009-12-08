@@ -27,16 +27,15 @@ class Dashboard(Dashboard_widget):
                 self.api = parent.api
 
                 #conectar eventos        
-                QtCore.QObject.connect(self.bt_text, QtCore.SIGNAL('clicked()'), self.OnText)
-                QtCore.QObject.connect(self.bt_photo, QtCore.SIGNAL('clicked()'), self.OnPhoto)
-                QtCore.QObject.connect(self.bt_quote, QtCore.SIGNAL('clicked()'), self.OnQuote)
-                QtCore.QObject.connect(self.bt_url, QtCore.SIGNAL('clicked()'), self.OnUrl)
-                QtCore.QObject.connect(self.bt_chat, QtCore.SIGNAL('clicked()'), self.OnChat)
-                QtCore.QObject.connect(self.bt_audio, QtCore.SIGNAL('clicked()'), self.OnAudio)
-                QtCore.QObject.connect(self.bt_video, QtCore.SIGNAL('clicked()'), self.OnVideo)
-                QtCore.QObject.connect(self.bt_logout, QtCore.SIGNAL('clicked()'), self.OnLogout)
-                #systray
-                #self.connect(self,QtCore.SIGNAL('finished(int)'),self.OnClose)
+                self.connect(self.bt_text, QtCore.SIGNAL('clicked()'), self.OnText)
+                self.connect(self.bt_photo, QtCore.SIGNAL('clicked()'), self.OnPhoto)
+                self.connect(self.bt_quote, QtCore.SIGNAL('clicked()'), self.OnQuote)
+                self.connect(self.bt_url, QtCore.SIGNAL('clicked()'), self.OnUrl)
+                self.connect(self.bt_chat, QtCore.SIGNAL('clicked()'), self.OnChat)
+                self.connect(self.bt_audio, QtCore.SIGNAL('clicked()'), self.OnAudio)
+                self.connect(self.bt_video, QtCore.SIGNAL('clicked()'), self.OnVideo)
+                self.connect(self.bt_logout, QtCore.SIGNAL('clicked()'), self.OnLogout)
+                                                
 
         def OnText(self):
                 text = Text(self)
@@ -59,7 +58,7 @@ class Dashboard(Dashboard_widget):
                 chat.show()
 
         def OnAudio(self):
-                audio = Audio(self)
+                audio = Audio(self,self.api)
                 audio.show()
 
         def OnVideo(self):
@@ -67,12 +66,6 @@ class Dashboard(Dashboard_widget):
                 video.show()
 
         def OnLogout(self):
-                self.close()
+                self.hide()
         
-        #def OnClose(self):
-        #    if QtGui.QSystemTrayIcon().isSystemTrayAvailable():            
-        #        icon = QtGui.QIcon()
-        #        icon.addPixmap(QtGui.QPixmap("/usr/share/pixmaps/opentumblr-qt/dashboard/opentumblr_icon.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        #        tray = QtGui.QSystemTrayIcon()
-        #        tray.setIcon(icon)
-        #        tray.show()                    
+                            

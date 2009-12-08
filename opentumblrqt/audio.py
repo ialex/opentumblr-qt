@@ -10,10 +10,10 @@ except ImportError:
     from tumblr import Api, TumblrError
 
 class Audio(Audio_widget):
-    def __init__(self,parent=None):
+    def __init__(self,parent=None,api=None):
         super(Audio,self).__init__(parent)        
         self.setupUi(self)
-        self.api = parent.api
+        self.api = api        
         
         #Conectar eventos 
         self.connect(self.bt_cancel, QtCore.SIGNAL('clicked()'), self.OnCancel)
@@ -22,7 +22,7 @@ class Audio(Audio_widget):
         self.connect(self.bt_browse, QtCore.SIGNAL("clicked()"), self.OnBrowse)
 
     def OnCancel(self):
-        self.close()
+        self.hide()
 
     def OnPost(self):
         self.data = unicode(self.le_file.text()).encode('utf-8')

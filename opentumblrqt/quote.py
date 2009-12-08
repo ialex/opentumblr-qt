@@ -19,7 +19,7 @@ class Quote(Quote_widget):
         self.connect(self.bt_post, QtCore.SIGNAL('clicked()'), self.OnPost)
 
     def OnCancel(self):
-        self.close()
+        self.hide()
 
     def OnPost(self):
         self.quote = unicode(self.te_quote.toPlainText()).encode('utf-8')

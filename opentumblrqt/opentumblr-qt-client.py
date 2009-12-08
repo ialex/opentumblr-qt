@@ -6,10 +6,12 @@ try:
     from opentumblrqt.gui.main_ui import Main_widget
     from opentumblrqt.tumblr import Api,TumblrAuthError
     from opentumblrqt.dashboard import Dashboard
+    from opentumblrqt.gui.TumblrTray import TumblrTray
 except ImportError:
     from gui.main_ui import Main_widget
     from tumblr import Api,TumblrAuthError
     from dashboard import Dashboard
+    from gui.TumblrTray import TumblrTray
 
 errors = {'403':'Login o password incorrectos','404':'Tumblrlog incorrecto','urlopen':'no ingreso su tumblrlog'}
 
@@ -37,15 +39,20 @@ class Cliente_Opentumblr(Main_widget):
 
             try:
                 self.auth = self.api.auth_check()
-                                        
-                #Abrir la ventana del dashboard
-                dashboard = Dashboard(self)                                                                  
-                self.hide()
-                dashboard.show()                                
+                                                 
+                if QtGui.QSystemTrayIcon.isSystemTrayAvailable():
+                    self.hide()
+                    tray = TumblrTray(self)
+                else:
+                    dashboard = Dashboard(self)                                                                  
+                    self.hide()
+                    dashboard.show()
+                 
+                                               
                 if self.rememberme.checkState() == 2:
                     file = open(QtCore.QDir().homePath() + '/.opentumblr','w')
-                    file.write(self.le_mail.text() + '\n')
-                    file.write(self.le_url.text() + '\n')
+                    file.write(self.le_mail.text())
+                    file.write(self.le_url.text())
                              
             except TumblrAuthError:	    		
                 self.error = errors['403']
