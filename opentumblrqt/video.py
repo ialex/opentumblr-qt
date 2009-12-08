@@ -50,3 +50,7 @@ class Video(Video_widget):
             self.close()
         else:
             QtGui.QMessageBox.warning(self,'Error','Embeded Video is required',QtGui.QMessageBox.Ok)
+    
+    def closeEvent(self,event):
+        event.ignore()
+        self.hide()

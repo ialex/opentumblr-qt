@@ -77,6 +77,10 @@ class Photo(Photo_widget):
         self.lb_photo.setText("<big>Photo URL</big>")
         self.lb_useurl.setVisible(False)
         self.le_imageurl.setFocus()
+    
+    def closeEvent(self,event):
+        event.ignore()
+        self.hide()
         
         
         

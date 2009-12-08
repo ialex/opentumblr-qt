@@ -53,3 +53,7 @@ class Link(Link_widget):
             self.close()
         else:
             QtGui.QMessageBox.warning(self,'Error','URL is required',QtGui.QMessageBox.Ok)
+    
+    def closeEvent(self,event):
+        event.ignore()
+        self.hide()

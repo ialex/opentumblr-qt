@@ -68,4 +68,10 @@ class Dashboard(Dashboard_widget):
         def OnLogout(self):
                 self.hide()
         
+        def closeEvent(self,event):
+            event.ignore()
+            self.hide()
+            
+            
+        
                             

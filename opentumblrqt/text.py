@@ -59,4 +59,8 @@ class Text(Text_widget):
     
     def OnCopy():
         self.le_title.text
+    
+    def closeEvent(self,event):
+        event.ignore()
+        self.hide()
 

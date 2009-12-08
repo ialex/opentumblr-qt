@@ -49,3 +49,7 @@ class Quote(Quote_widget):
             self.close()
         else:
             QtGui.QMessageBox.warning(self,'Error','Quote is required',QtGui.QMessageBox.Ok)
+    
+    def closeEvent(self,event):
+        event.ignore()
+        self.hide()
